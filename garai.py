@@ -1,7 +1,12 @@
+import os
+
 import discord
 from discord.ext import commands
 
-from secret import DISCORD_TOKEN
+if os.path.exists('secret.py'):
+    from secret import DISCORD_TOKEN
+else:
+    DISCORD_TOKEN = os.environ['DISCORD_TOKEN']
 
 bot = commands.Bot(command_prefix='/')
 
