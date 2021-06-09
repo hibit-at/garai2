@@ -1,4 +1,5 @@
 import os
+import random
 
 import discord
 from discord.ext import commands
@@ -12,8 +13,17 @@ bot = commands.Bot(command_prefix='/')
 
 @bot.command()
 async def test(ctx):
-    print('サーバーでの発言を検知')
     await ctx.send("がらい杯の時間だああ")
+
+@bot.command()
+async def faz(ctx):
+    words = 'ふぁずぱい'
+    s = ''
+    for i in range(5):
+        r = random.randrange(5)
+        s += words[i]
+    await ctx.send(s)
+    
 
 print("bot running...")
 bot.run(DISCORD_TOKEN)
