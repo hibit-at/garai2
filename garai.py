@@ -21,7 +21,7 @@ async def faz(ctx):
     s = ''
     for i in range(5):
         r = random.randrange(5)
-        s += words[i]
+        s += words[r]
     await ctx.send(s)
     
 
